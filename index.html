@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather API</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="/styles/style.css">
+    <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+    <script>dayjs().format()</script>
+</head>
+<body onload="initClock()">
+    <section>
+        <div class="container">
+            <div class="city_weather">
+                Global City Weather
+            </div>
+
+            <div class="dropList">
+                    <label for="city">Selcet your City</label>
+                <select name="city_select" id="city">
+                    <option value=""></option>
+                    <option value="Taipei">Taipei</option>
+                    <option value="Tokyo">Tokyo</option>
+                    <option value="Singapore">Singapore</option>
+                    <option value="New York">New York</option>
+                    <option value="Los Angeles">Los Angeles</option>
+                    <option value="London">London</option>
+                    <option value="Dubai">Dubai</option>
+                    <option value="Seoul">Seoul</option>
+                    <option value="HongKong">HongKong</option>
+                    <option value="bangkok">Bangkok</option>
+                </select>
+            </div>
+        </div>
+    <!-- =================== 正常的時間 -->
+        <div class="dateTime">
+            <div class="date">
+                <span id="day">Day</span>
+                <span id="month">Month</span>
+                <span id="daynum">00</span>
+                <span id="year">Year</span>
+            </div>
+            <div class="time">
+                <span id="hour">00</span>:
+                <span id="minutes">00</span>:
+                <span id="second">00</span>
+                <span id="period">00</span>
+            </div>
+
+        </div>
+         <!-- =================== 串接api的轉換時間  -->
+        <div class="dateTime" id="timezone">
+            <div class="date">
+                <span class="tz_day" >Day</span>
+                <span class="tz_month" >Month</span>
+                <span class="tz_daynum" >00</span>
+                <span class="tz_year" >Year</span>
+            </div>
+            <div class="time">
+                <span class="tz_hour" >00</span>:
+                <span class="tz_minutes" >00</span>
+                <span class="tz_period" >00</span>
+            </div>
+        </div>
+
+           <!-- =================== Weather -->
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <div class="card-text">
+                  <h1 id="city_name"></h1>
+                  <h2 id="country_name"></h2>
+                  <h3 id="temp"></h3>
+                  <div id="description">
+                    <div id="des"></div>
+                    <img src="" id="icon" alt="">
+                  </div>
+
+              </div>
+            </div>
+          </div>
+    </section>
+    
+
+
+    <script src="app.js"></script>
+    <script src="dateTime.js"></script>
+</body>
+</html>
